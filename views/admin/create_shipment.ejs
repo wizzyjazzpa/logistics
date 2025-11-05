@@ -1,0 +1,296 @@
+<%- include('admin_partial/header') %>
+<!-- begin app-container -->
+            <div class="app-container">
+                <!-- begin app-nabar -->
+                 <%- include('admin_partial/aside') %>
+                
+                <div class="app-main" id="main">
+                    <!-- begin container-fluid -->
+                    <div class="container-fluid">
+                        <!-- begin row -->
+                        <div class="row">
+                            <div class="col-md-12 m-b-30">
+                                <!-- begin page title -->
+                                <div class="d-block d-sm-flex flex-nowrap align-items-center">
+                                    <div class="page-title mb-2 mb-sm-0">
+                                        <h1><%= title %></h1>
+                                    </div>
+                                    
+                                    <div class="ml-auto d-flex align-items-center">
+                                      
+                                        <nav>
+                                             
+                                            <ol class="breadcrumb p-0 m-b-0">
+                                                <li class="breadcrumb-item">
+                                                    <a href="/home"><i class="ti ti-home"></i></a>
+                                                </li>
+                                                <li class="breadcrumb-item">
+                                                    Pages
+                                                </li>
+                                                <li class="breadcrumb-item active text-primary" aria-current="page"><%= title %></li>
+                                            </ol>
+                                        </nav>
+                                    </div>
+                                </div>
+                                <!-- end page title -->
+                            </div>
+                        </div>
+                        <!-- end row -->
+
+                        <!--start contact contant-->
+                            <p class="alert alert-icon alert-outline-info" style="margin-bottom: 1%;">Attention: Kindly endeavour to fill all form fields appropriately...</p>
+                             <div id="msg" style="margin-bottom: 1%;"></div>
+                        <div class="row">
+                         
+                            <div class="col-xxl-12 col-xl-12 col-sm-12">
+                                <div class="card card-statistics contact-contant">
+                                    <div class="card-body py-4">
+                                         <form id="ShipmentForm" >
+                                             <h5>SENDERS DETAILS</h5>
+                                            <div class="row">
+                                               
+                                                <div class="col-md-6">
+                                                     <div class="form-group">
+                                                        <label for="exampleInputEmail1">Staff User</label>
+                                                        <input type="text" class="form-control" id="staffUser" aria-describedby="emailHelp" value="Admin Logistics" readonly>
+                                                        <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                                                      </div>
+                                                </div>
+
+                                                 <div class="col-md-6">
+                                                     <div class="form-group">
+                                                        <label for="exampleInputEmail1">Sender Name</label>
+                                                        <input type="text" class="form-control" id="sendername" aria-describedby="emailHelp" placeholder="Sender Name" required>
+                                                        <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                                                      </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                     <div class="form-group">
+                                                        <label for="exampleInputEmail1">Sender Address</label>
+                                                        <input type="text" class="form-control" id="senderaddress" aria-describedby="emailHelp" placeholder="Sender Address" required>
+                                                        <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                                                      </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                     <div class="form-group">
+                                                        <label for="exampleInputEmail1">Sender Phone</label>
+                                                        <input type="text" class="form-control" id="senderphone" aria-describedby="emailHelp" placeholder="Sender Phone" required>
+                                                        <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                                                      </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                     <div class="form-group">
+                                                        <label for="exampleInputEmail1">Sender email</label>
+                                                        <input type="text" class="form-control" id="senderemail" aria-describedby="emailHelp" placeholder="Sender Email" required>
+                                                        <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                                                      </div>
+                                                </div>
+
+
+                                            </div>
+                                             <h5>SHIPMENT INFORMATION</h5>
+                                            <div class="row">
+
+                                                <div class="col-md-6">
+                                                     <div class="form-group">
+                                                        <label for="exampleInputEmail1">Payment Mode</label>
+                                                        <select class="form-control" id="paymentmethod">
+                                                            <option>Select Payment Method</option>
+                                                            <option value="Payment on Delivery">Pay On Delivery</option>
+                                                            <option value="Bank Transfer">Bank Transfer</option>
+                                                            <option value="Crypto">Crypto</option>
+                                                            <option value="Online Payment">Online Payment</option>
+                                                        </select>
+                                                       
+                                                      </div>
+                                                </div>
+
+                                               <div class="col-md-6">
+                                                     <div class="form-group">
+                                                        <label for="exampleInputEmail1">Product/Type</label>
+                                                        <input type="text" class="form-control" id="producttype" aria-describedby="emailHelp" placeholder="Enter Item Name" required>
+                                                        <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                                                      </div>
+                                             </div>
+
+                                             <div class="col-md-6">
+                                                     <div class="form-group">
+                                                        <label for="exampleInputEmail1">Delivery Mode</label>
+                                                       <select class="form-control" id="deliverymode">
+                                                            <option value="">Select Delivery Method</option>
+                                                            <option value="DHL Express">DHL Express</option>
+                                                            <option value="Federal Express">Federal Express</option>
+                                                            <option value="Land">Land</option>
+                                                            <option value="Flight">Flight</option>
+                                                        </select>
+                                                      </div>
+                                             </div>
+
+
+                                             <div class="col-md-6">
+                                                     <div class="form-group">
+                                                        <label for="exampleInputEmail1">$ Shipment Insurance</label>
+                                                        <input type="number" class="form-control" id="shipmentinsurance" aria-describedby="emailHelp" placeholder="Amount for Insurance" required>
+                                                        <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                                                     </div>
+                                             </div>
+
+                                              <div class="col-md-6">
+                                                      <div class="form-group">
+                                                        <label for="exampleInputEmail1">Status</label>
+                                                       <select class="form-control" id="status">
+                                                            <option value="">Select Status Of Item</option>
+                                                            <option value="On Transit">On Transit</option>
+                                                            <option value="Delivered">Delivered</option>
+                                                            <option value="Pending">Pending</option>
+                                                            
+                                                        </select>
+                                                      </div>
+                                              </div>
+
+
+                                              <div class="col-md-6">
+                                                     <div class="form-group">
+                                                        <label for="exampleInputEmail1">Duration</label>
+                                                        <input type="text" class="form-control" id="duration" aria-describedby="emailHelp" placeholder="E.g 3 days" required>
+                                                        <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                                                     </div>
+                                             </div>
+
+
+                                             <div class="col-md-6">
+                                                     <div class="form-group">
+                                                        <label for="exampleInputEmail1">Shipment Origin</label>
+                                                        <input type="text" class="form-control" id="shipmentorigin" aria-describedby="emailHelp" placeholder="Shipment Origin" required>
+                                                        <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                                                     </div>
+                                             </div>
+
+                                             <div class="col-md-6">
+                                                     <div class="form-group">
+                                                        <label for="exampleInputEmail1">Quantity</label>
+                                                        <input type="number" class="form-control" id="quantity" aria-describedby="emailHelp" placeholder="0.00" required>
+                                                        <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                                                     </div>
+                                             </div>
+                                                <div class="col-md-6">
+                                                     <div class="form-group">
+                                                        <label for="exampleInputEmail1">Weight</label>
+                                                        <input type="number" class="form-control" id="weight" aria-describedby="emailHelp" placeholder="0.00" required>
+                                                        <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                                                     </div>
+                                             </div>
+                                             <div class="col-md-6">
+                                                     <div class="form-group">
+                                                        <label for="exampleInputEmail1">Cost of Delivery</label>
+                                                        <input type="number" class="form-control" id="costdelivery" aria-describedby="emailHelp" placeholder="E.g 3000" required>
+                                                        <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                                                     </div>
+                                             </div>
+
+                                             <div class="col-md-12">
+                                                     <div class="form-group">
+                                                        <label for="exampleInputEmail1">Subtotal Cost</label>
+                                                        <input type="text" class="form-control" id="subtotal" aria-describedby="emailHelp" placeholder="0" readonly>
+                                                        <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                                                     </div>
+                                             </div>
+
+                                         </div> 
+                                         <h3> RECEIPIENT INFORMATION</h3>   
+                                         <div class="row">
+
+                                             <div class="col-md-6">
+                                                     <div class="form-group">
+                                                        <label for="exampleInputEmail1">Address</label>
+                                                        <input type="text" class="form-control" id="receiveraddress" aria-describedby="emailHelp" placeholder=" Receiver's Address" required>
+                                                        <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                                                     </div>
+                                             </div>
+
+                                              <div class="col-md-6">
+                                                     <div class="form-group">
+                                                        <label for="exampleInputEmail1">Full Name</label>
+                                                        <input type="text" class="form-control" id="receiverfullname" aria-describedby="emailHelp" placeholder="Receiver's Name" required>
+                                                        <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                                                     </div>
+                                             </div>
+
+                                              <div class="col-md-6">
+                                                     <div class="form-group">
+                                                        <label for="exampleInputEmail1">Phone</label>
+                                                        <input type="text" class="form-control" id="receiverphone" aria-describedby="emailHelp" placeholder=" Receiver's Phone" required>
+                                                        <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                                                     </div>
+                                             </div>
+
+                                              <div class="col-md-6">
+                                                     <div class="form-group">
+                                                        <label for="exampleInputEmail1">Email</label>
+                                                        <input type="email" class="form-control" id="receiveremail" aria-describedby="emailHelp" placeholder=" Receiver's Email" required>
+                                                        <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                                                     </div>
+                                             </div>
+
+                                             <div class="col-md-12">
+                                                     <div class="form-group">
+                                                        <label for="exampleInputEmail1">Tracking Number</label>
+                                                        <input type="text" class="form-control" id="trackingnumber" aria-describedby="emailHelp"  readonly>
+                                                        <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                                                     </div>
+                                             </div>
+
+                                             <div class="col-md-6">
+                                                     <div class="form-group">
+                                                        <label for="exampleInputEmail1">Current Location</label>
+                                                        <input type="text" class="form-control" id="currentlocation" aria-describedby="emailHelp" placeholder="Current Location" required>
+                                                        <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                                                     </div>
+                                             </div>
+
+
+                                             <div class="col-md-6">
+                                                     <div class="form-group">
+                                                        <label for="exampleInputEmail1">Set Current Location value</label>
+                                                        <select class="form-control" id="currentlocationvalue">
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                        </select>
+                                                     </div>
+                                             </div>
+
+                                             <div class="col-md-12">
+                                                     <div class="form-group">
+                                                        <label for="exampleInputEmail1">Description/Details of Shipping</label>
+                                                         <textarea name="" id="description" class="form-control" height="60"></textarea>
+                                                     </div>
+                                             </div>
+                                              <div class="col-md-6">
+                                                 
+                                                <button type="submit" class="btn btn-primary">Create Shipment</button>
+
+                                              </div>
+
+                                         </div>
+
+
+                                   </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--end contact contant-->
+                    </div>
+                    <!-- end container-fluid -->
+                </div>
+                <!-- end app-main -->
+
+        
+            </div>
+<%- include('admin_partial/footer') %>

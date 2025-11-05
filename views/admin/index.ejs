@@ -1,0 +1,254 @@
+   <%- include('admin_partial/header') %>
+            <!-- end app-header -->
+            <!-- begin app-container -->
+            <div class="app-container">
+               <%- include('admin_partial/aside') %>
+                <!-- end app-navbar -->
+                <!-- begin app-main -->
+                <div class="app-main" id="main">
+                    <!-- begin container-fluid -->
+                    <div class="container-fluid">
+                        <!-- begin row -->
+                        <div class="row">
+                            <div class="col-md-12 m-b-30">
+                                <!-- begin page title -->
+                                <div class="d-block d-lg-flex flex-nowrap align-items-center">
+                                    <div class="page-title mr-4 pr-4 border-right">
+                                        <h1>Dashboard</h1>
+                                    </div>
+                                    <div class="breadcrumb-bar align-items-center">
+                                        <nav>
+                                            <ol class="breadcrumb p-0 m-b-0">
+                                                <li class="breadcrumb-item">
+                                                    <a href="/home"><i class="ti ti-home"></i></a>
+                                                </li>
+                                                <li class="breadcrumb-item">
+                                                    Dashboard
+                                                </li>
+                                                <li class="breadcrumb-item active text-primary" aria-current="page">Home</li>
+                                            </ol>
+                                        </nav>
+                                    </div>
+                                    <div class="ml-auto d-flex align-items-center secondary-menu text-center">
+                                        <a href="/createShipment" class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Create Shipment">
+                                            <i class="fe fe-edit btn btn-icon text-primary"></i>
+                                        </a>
+                                        <a href="javascript:void(0);" class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Projects">
+                                            <i class="fa fa-lightbulb-o btn btn-icon text-success"></i>
+                                        </a>
+                                        <a href="javascript:void(0);" class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Task">
+                                            <i class="fa fa-check btn btn-icon text-warning"></i>
+                                        </a>
+                                        <a href="javascript:void(0);" class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Calendar">
+                                            <i class="fa fa-calendar-o btn btn-icon text-cyan"></i>
+                                        </a>
+                                        <a href="javascript:void(0);" class="tooltip-wrapper" data-toggle="tooltip" data-placement="top" title="" data-original-title="Analytics">
+                                            <i class="fa fa-bar-chart-o btn btn-icon text-danger"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- end page title -->
+                            </div>
+                        </div>
+                        <!-- Notification -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="alert border-0 alert-primary bg-gradient m-b-30 alert-dismissible fade show border-radius-none" role="alert">
+                                    <strong>Holy guacamole!</strong> You should check in on some of those
+                                    fields below.
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <i class="ti ti-close"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
+                        <!-- begin row -->
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card card-statistics">
+                                    <div class="row no-gutters">
+                                        <div class="col-xxl-3 col-lg-6">
+                                            <div class="p-20 border-lg-right border-bottom border-xxl-bottom-0">
+                                                <div class="d-flex m-b-10">
+                                                    <p class="mb-0 font-regular text-muted font-weight-bold">TOTAL SHIPPING DELIVERED</p>
+                                                    <a class="mb-0 ml-auto font-weight-bold" href="#"><i class="ti ti-more-alt"></i> </a>
+                                                </div>
+                                                <div class="d-block d-sm-flex h-100 align-items-center">
+                                                    <div class="apexchart-wrapper">
+                                                        <div id="analytics7"></div>
+                                                    </div>
+                                                    <div class="statistics mt-3 mt-sm-0 ml-sm-auto text-center text-sm-right">
+                                                        <h3 class="mb-0"><i class="icon-arrow-up-circle"></i><%= count_delivered %></h3>
+                                                        <p>Total Shipment Delivered </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xxl-3 col-lg-6">
+                                            <div class="p-20 border-xxl-right border-bottom border-xxl-bottom-0">
+                                                <div class="d-flex m-b-10">
+                                                    <p class="mb-0 font-regular text-muted font-weight-bold">TOTAL SENDERS</p>
+                                                    <a class="mb-0 ml-auto font-weight-bold" href="#"><i class="ti ti-more-alt"></i> </a>
+                                                </div>
+                                                <div class="d-block d-sm-flex h-100 align-items-center">
+                                                    <div class="apexchart-wrapper">
+                                                        <div id="analytics8"></div>
+                                                    </div>
+                                                    <div class="statistics mt-3 mt-sm-0 ml-sm-auto text-center text-sm-right">
+                                                        <h3 class="mb-0"><i class="icon-arrow-up-circle"></i><%= count_sender %></h3>
+                                                        <p>Total Senders</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-xxl-3 col-lg-6">
+                                            <div class="p-20 border-lg-right border-bottom border-lg-bottom-0">
+                                                <div class="d-flex m-b-10">
+                                                    <p class="mb-0 font-regular text-muted font-weight-bold">TOTAL SHIPNET ON TRANSIT</p>
+                                                    <a class="mb-0 ml-auto font-weight-bold" href="#"><i class="ti ti-more-alt"></i> </a>
+                                                </div>
+                                                <div class="d-block d-sm-flex h-100 align-items-center">
+                                                    <div class="apexchart-wrapper">
+                                                        <div id="analytics9"></div>
+                                                    </div>
+                                                    <div class="statistics mt-3 mt-sm-0 ml-sm-auto text-center text-sm-right">
+                                                        <h3 class="mb-0"><i class="icon-arrow-up-circle"></i><%= count_transit %></h3>
+                                                        <p>Total Shipment On Transit</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                         <div class="col-xxl-3 col-lg-6">
+                                            <div class="p-20 border-xxl-right border-bottom border-xxl-bottom-0">
+                                                <div class="d-flex m-b-10">
+                                                    <p class="mb-0 font-regular text-muted font-weight-bold">TOTAL RECEIVERS</p>
+                                                    <a class="mb-0 ml-auto font-weight-bold" href="#"><i class="ti ti-more-alt"></i> </a>
+                                                </div>
+                                                <div class="d-block d-sm-flex h-100 align-items-center">
+                                                    <div class="apexchart-wrapper">
+                                                        <div id="analytics10"></div>
+                                                    </div>
+                                                    <div class="statistics mt-3 mt-sm-0 ml-sm-auto text-center text-sm-right">
+                                                        <h3 class="mb-0"><i class="icon-arrow-up-circle"></i><%= count_receiver %></h3>
+                                                        <p>Total Receiver</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xxl-7 m-b-30">
+                                <div class="card card-statistics h-100 mb-0 apexchart-tool-force-top">
+                                    <div class="card-header d-flex justify-content-between">
+                                        <div class="card-heading">
+                                            <h4 class="card-title">Shipment History</h4>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        
+                                        
+                                        <div class="datatable-wrapper table-responsive">
+                                            <table id="datatable" class="display compact table table-striped table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Tracking No</th>
+                                                        <th>Mode of Payment</th>
+                                                        <th>Sender</th>
+                                                        <th>Receipiant</th>
+                                                        <th>Status</th>
+                                                        <th>Employee</th>
+                                                        <th>Edit Record</th>
+                                                        <th>Delete Record</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                     <% getshipments.forEach( function ( shipments) { %>
+
+                                                         <tr>
+                                                        <td><%= shipments.trackingID %></td>
+                                                        <td><%= shipments.paymentMethod %></td>
+                                                        <td><%= shipments.senderName %></td>
+                                                        <td><%= shipments.receiverName %></td>
+                                                        <td><%= shipments.status %></td>
+                                                        <td><%= shipments.staff %></td>
+                                                        <td><button  data-trackID="<%= shipments.trackingID %>" class="btn btn-primary btn_edit">Edit</button></td>
+                                                        <td><button  data-trackID="<%= shipments.trackingID %>" class="btn btn-danger btn_delete">Delete</button></td>
+                                                    </tr>
+                                                      
+                                                     <% }) %>
+                                                </tbody>
+                                                <tfoot>
+                                                   <th>Tracking No</th>
+                                                        <th>Mode of Payment</th>
+                                                        <th>Sender</th>
+                                                        <th>Receipiant</th>
+                                                        <th>Date</th>
+                                                        <th>Edit Record</th>
+                                                        <th>Delete Record</th>
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                          
+                        </div>
+
+
+
+
+
+
+
+                        <!-- event Modal 
+                        <div class="modal fade" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="verticalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="verticalCenterTitle">Add New Event</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="form-group">
+                                                <label for="modelemail">Event Name</label>
+                                                <input type="email" class="form-control" id="modelemail">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Choose Event Color</label>
+                                                <select class="form-control">
+                                                    <option>Primary</option>
+                                                    <option>Warning</option>
+                                                    <option>Success</option>
+                                                    <option>Danger</option>
+                                                </select>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-success">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>-->
+                    </div>
+                    <!-- end container-fluid -->
+                </div>
+                <!-- end app-main -->
+            </div>
+            <!-- end app-container -->
+            <!-- begin footer -->
+         <%- include('admin_partial/footer') %>
