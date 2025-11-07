@@ -133,6 +133,18 @@
     <!-- Jquery Plugins, main Jquery -->	
     <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/main.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#btn_tracking').click(function(){
+                 let trackingNo = $('#tracking_text').val();
+                 if(trackingNo==""){
+                    alert("please enter tracking number")
+                 }else{
+                        window.location.href=`/tracking?trackingID=${trackingNo}`;
+                 }
+            })
+        })
+    </script>
     
 </body>
 </html>

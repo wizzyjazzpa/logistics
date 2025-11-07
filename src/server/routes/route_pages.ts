@@ -1,5 +1,5 @@
 import Router from "express";
-import {home, about, services,contact,  Admin_home, Login, AdminRegister, logout,createShipment,edit_shipment} from "../controller/controlpages";
+import {home, about, services,contact,  Admin_home, Login, AdminRegister, logout,createShipment,edit_shipment,tracking} from "../controller/controlpages";
 import { authMiddleware } from "../middlewares/authMiddleWare";
 
 const router = Router();
@@ -9,6 +9,7 @@ router.get("/",home);
 router.get("/about",about);
 router.get("/services",services);
 router.get("/contact",contact);
+router.get('/tracking',tracking)
 
 //Admin 
  router.get('/adminRegister',AdminRegister);
@@ -16,6 +17,7 @@ router.get("/contact",contact);
  router.get('/home',authMiddleware,Admin_home); 
  router.get('/createShipment',authMiddleware,createShipment)
  router.get('/updateShipment',authMiddleware,edit_shipment)
+ 
  router.get('/logout',logout);
 
 

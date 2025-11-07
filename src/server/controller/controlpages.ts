@@ -20,6 +20,12 @@ export const contact = async(req:Request,res:Response)=>{
        res.render("contact",{title:"Contact"});
 }
 
+export const tracking = async(req:Request,res:Response)=>{
+      const trackingID = req.query.trackingID
+       const getshipments = await shipment_model.findOne({trackingID:trackingID})
+       res.render("tracking",{title:"tracking",getshipments});
+}
+
 
 //Admin
 export const AdminRegister  = async(req:Request,res:Response)=>{
